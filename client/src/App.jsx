@@ -12,6 +12,26 @@ import LoadingSpinner from './components/LoadingSpinner'
 function App() {
   const { user, loading } = useAuth()
 
+  // TEMPORARY: Bypass authentication for client demo
+  // Remove this section and uncomment the original code below when ready to restore auth
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="patients" element={<Patients />} />
+        <Route path="doctors" element={<Doctors />} />
+        <Route path="appointments" element={<Appointments />} />
+        <Route path="billing" element={<Billing />} />
+      </Route>
+      
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    </Routes>
+  )
+
+  /* ORIGINAL CODE - UNCOMMENT TO RESTORE AUTHENTICATION
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -42,6 +62,7 @@ function App() {
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   )
+  */
 }
 
 export default App

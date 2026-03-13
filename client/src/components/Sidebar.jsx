@@ -75,13 +75,13 @@ const Sidebar = ({ open, setOpen }) => {
             <div className="flex-shrink-0">
               <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center shadow-md">
                 <span className="text-sm font-bold text-white">
-                  {user?.username?.charAt(0).toUpperCase()}
+                  {user?.username?.charAt(0).toUpperCase() || 'A'}
                 </span>
               </div>
             </div>
             <div className="ml-3 flex-1">
-              <p className="text-sm font-semibold text-gray-900">{user?.username}</p>
-              <p className="text-xs text-gray-600 capitalize">{user?.role} User</p>
+              <p className="text-sm font-semibold text-gray-900">{user?.username || 'Admin'}</p>
+              <p className="text-xs text-gray-600 capitalize">{user?.role || 'admin'} User</p>
             </div>
           </div>
         </div>

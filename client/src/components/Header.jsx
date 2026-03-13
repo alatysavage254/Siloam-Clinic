@@ -37,7 +37,7 @@ const Header = ({ setSidebarOpen }) => {
         <div className="flex items-center space-x-6">
           <div>
             <h1 className="text-xl font-bold text-gray-900">
-              Good {now.getHours() < 12 ? 'Morning' : now.getHours() < 18 ? 'Afternoon' : 'Evening'}, {user?.username}!
+              Good {now.getHours() < 12 ? 'Morning' : now.getHours() < 18 ? 'Afternoon' : 'Evening'}, {user?.username || 'Admin'}!
             </h1>
             <div className="flex items-center space-x-4 mt-1">
               <div className="flex items-center text-sm text-gray-600">
@@ -94,12 +94,12 @@ const Header = ({ setSidebarOpen }) => {
           {/* User profile */}
           <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-semibold text-gray-900">{user?.username}</p>
-              <p className="text-xs text-gray-600 capitalize">{user?.role} User</p>
+              <p className="text-sm font-semibold text-gray-900">{user?.username || 'Admin'}</p>
+              <p className="text-xs text-gray-600 capitalize">{user?.role || 'admin'} User</p>
             </div>
             <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center shadow-md">
               <span className="text-sm font-bold text-white">
-                {user?.username?.charAt(0).toUpperCase()}
+                {user?.username?.charAt(0).toUpperCase() || 'A'}
               </span>
             </div>
           </div>
