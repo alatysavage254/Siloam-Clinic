@@ -1,0 +1,35 @@
+{
+  "name": "clinic-hms",
+  "version": "1.0.0",
+  "description": "Siloam Dental & Eye Clinic Health Management System",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "build": "pnpm run --filter client build && pnpm run --filter server build",
+    "start": "pnpm run --filter server start",
+    "install:all": "pnpm install",
+    "clean": "pnpm run --parallel clean"
+  },
+  "keywords": [
+    "healthcare",
+    "clinic",
+    "management",
+    "mern",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "Siloam Clinic",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
